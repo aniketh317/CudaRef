@@ -1,0 +1,63 @@
+/raid/home/anikethv/others/c-arch/hpca-course-assignment-2022
+dgx1
+Mon 28 Nov 2022 12:25:26 AM IST
+Mon Nov 28 00:25:26 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 465.19.01    Driver Version: 465.19.01    CUDA Version: 11.3     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA Tesla V1...  On   | 00000000:06:00.0 Off |                    0 |
+| N/A   36C    P0    56W / 300W |  31886MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA Tesla V1...  On   | 00000000:07:00.0 Off |                    0 |
+| N/A   42C    P0    77W / 300W |  32391MiB / 32510MiB |      9%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  NVIDIA Tesla V1...  On   | 00000000:0A:00.0 Off |                    0 |
+| N/A   38C    P0    56W / 300W |    492MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  NVIDIA Tesla V1...  On   | 00000000:0B:00.0 Off |                    0 |
+| N/A   36C    P0    55W / 300W |    492MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   4  NVIDIA Tesla V1...  On   | 00000000:85:00.0 Off |                    0 |
+| N/A   41C    P0    58W / 300W |  23665MiB / 32510MiB |     11%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   5  NVIDIA Tesla V1...  On   | 00000000:86:00.0 Off |                    0 |
+| N/A   42C    P0    69W / 300W |  25797MiB / 32510MiB |      7%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   6  NVIDIA Tesla V1...  On   | 00000000:89:00.0 Off |                    0 |
+| N/A   41C    P0    57W / 300W |    490MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   7  NVIDIA Tesla V1...  On   | 00000000:8A:00.0 Off |                    0 |
+| N/A   38C    P0    55W / 300W |    494MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python    31883MiB |
+|    1   N/A  N/A   1340023      C   python                          31897MiB |
+|    1   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    2   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    3   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    4   N/A  N/A   1339866      C   python                          23169MiB |
+|    4   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    5   N/A  N/A   1390821      C   python                          25303MiB |
+|    5   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    6   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
+|    7   N/A  N/A   1555379      C   ...hra/miniconda3/bin/python      487MiB |
++-----------------------------------------------------------------------------+
+Input matrix of size 16384
+GPU execution time: 11359.8 ms

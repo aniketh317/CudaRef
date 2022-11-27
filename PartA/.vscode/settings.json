@@ -1,0 +1,22 @@
+{
+    "makefile.makefilePath": "",
+    "makefile.makePath": "/usr/bin/make",
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/aniketh317/hpca-course-assignment-2022/PartA/data",
+            "binaryPath": "/home/aniketh317/hpca-course-assignment-2022/PartA/data/generate",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "/home/aniketh317/hpca-course-assignment-2022/PartA",
+            "binaryPath": "/home/aniketh317/hpca-course-assignment-2022/PartA/rmm",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "/home/aniketh317/hpca-course-assignment-2022/PartA",
+            "binaryPath": "/home/aniketh317/hpca-course-assignment-2022/PartA/rmmm",
+            "binaryArgs": []
+        }
+    ]
+}
