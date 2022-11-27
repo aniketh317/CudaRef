@@ -17,7 +17,7 @@ Use the following command to compile the programs and generate required input:
 ```
 make
 ```
-## CPU based(Threaded, Multithreaded)
+## PARTA
 ### Running program
 You can use make to run the executable with the following command:
 ```
@@ -30,7 +30,8 @@ Alternatively, you can manually run the program for the different input sets usi
 ./rmm data/input_16384.in
 ```
 
-## (GPU)
+## PARTB
 use nvcc for compilation
 ```
+use makefile for respective tasks
 # CudaRef
