@@ -1,4 +1,4 @@
-# HPCA Assignment
+# Sample CUDA Program
 Optimize reducing matrix multiplication using hardware counters.
 Contained are two folders:
 * PartA: Contains setup for single-threaded and multi-threaded program.
@@ -17,7 +17,7 @@ Use the following command to compile the programs and generate required input:
 ```
 make
 ```
-## PART A
+## PARTA
 ### Running program
 You can use make to run the executable with the following command:
 ```
@@ -30,22 +30,8 @@ Alternatively, you can manually run the program for the different input sets usi
 ./rmm data/input_16384.in
 ```
 
-## PART B
-To compile the code for use on native GPU use the following command:
+## PARTB
+use nvcc for compilation
 ```
-make server
-```
-For use with GPGPU-Sim, additional flags are required during compilation, which can be done with the following command:
-```
-make sim
-```
-
-You can use make to run the executable with the following command for native execution:
-```
-make run_server
-```
-When running on GPGPU-Sim, use the following command instead:
-```
-make run_sim
-```
+use makefile for respective tasks
 # CudaRef
