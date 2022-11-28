@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
     else 
         N = atoi(argv[1]); 
     ofstream output_file; 
-    string file_name = "../datacommon/input_" + to_string(N) + ".in";  
+    string file_name = "datacommon/input_" + to_string(N) + ".in";  
     output_file.open(file_name); 
 
     // Set seed

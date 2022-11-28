@@ -1,10 +1,13 @@
-all: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmcpu rmmcpu2 rmmgpu rmmgpu2
+all: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmcpu rmmcpu2 rmmcpu3 rmmgpu rmmgpu2
 
 rmmcpu: PartA/main.cpp PartA/header/single_thread.h PartA/header/multi_thread.h
 	g++ -g -ggdb PartA/main.cpp -o rmmcpu -I PartA/header -lpthread -mavx -mavx2
 
 rmmcpu2: PartA/main2.cpp PartA/header/single_thread.h PartA/header/multi_thread.h
 	g++ -g -ggdb PartA/main2.cpp -o rmmcpu2 -I PartA/header -lpthread -mavx -mavx2
+
+rmmcpu3: PartA/main3.cpp PartA/header/single_thread.h PartA/header/multi_thread.h
+	g++ -g -ggdb PartA/main3.cpp -o rmmcpu3 -I PartA/header -lpthread -mavx -mavx2
 
 rmmgpu: PartB/main.cu PartB/header/gpu_thread.h
 	nvcc PartB/main.cu -o rmmgpu -I PartB/header
@@ -23,6 +26,9 @@ datacommon/input_512.in: data/generate
 
 datacommon/input_1024.in: data/generate
 	./data/generate 1024 
+
+datacommon/input_2048.in: data/generate
+	./data/generate 2048
 
 datacommon/input_4096.in: data/generate
 	./data/generate 4096 
@@ -45,6 +51,11 @@ runcpu2: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.i
 	./rmmcpu2 datacommon/input_8192.in
 	./rmmcpu2 datacommon/input_16384.in
 
+runcpu3: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmcpu3
+	./rmmcpu3 datacommon/input_16.in
+	./rmmcpu3 datacommon/input_4096.in
+	./rmmcpu3 datacommon/input_8192.in
+	./rmmcpu3 datacommon/input_16384.in
 
 rungpu: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmgpu
 	./rmmgpu data/input_16.in
@@ -61,3 +72,6 @@ runcpu2: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.i
 clean:
 	rm rmmcpu
 	rm rmmcpu2
+	rm rmmcpu3
+	rm rmmgpu
+	rm rmmgpu2

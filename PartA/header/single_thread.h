@@ -48,9 +48,8 @@ void singleThread2(int N, int *matA, int *matB, int *output)
 }
 
 /*Loop-Tiling based*/
-void singleThread3(int N, int *matA, int *matB, int *output)
+void singleThread3(int N, int *matA, int *matB, int *output, int T=2)
 {
-  int T = 16;
   assert( N>=4 and N == ( N &~ (N-1)));
   for(int rowA = 0; rowA < N; rowA +=T) {
     for(int iter = 0; iter < N; iter += T){
