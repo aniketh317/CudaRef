@@ -64,7 +64,8 @@ int main(int argc, char *argv[])
   for(int i = 0; i < N; ++i)
     for(int j = 0; j < N; ++j)
       input_file >> matB[i * N + j];
-
+  
+  /*
   // Untimed, warmup caches and TLB
   int *output_reference = new int[(N>>1)*(N>>1)];
   reference(N, matA, matB, output_reference);
@@ -113,25 +114,22 @@ int main(int argc, char *argv[])
       cout << "Mismatch at " << i << "\n";
       exit(0);
     }
-  }
+  }*/
   
-  // Execute single thread
-  for(int T=2;T<=1024; T<<=1)
-  {
-    output_single = new int[(N>>1)*(N>>1)];
-    begin = TIME_NOW;
-    singleThread3(N, matA, matB, output_single,T);
-    end = TIME_NOW;
-    cout << "Singlethread-3 execution time for T = " << T <<" -- " << 
-        (double)TIME_DIFF(std::chrono::microseconds, begin, end) / 1000.0 << " ms\n";
+   // Execute multi-thread
+  int *output_multi = new int[(N>>1)*(N>>1)];
+  auto begin = TIME_NOW;
+  multiThread1(N, matA, matB, output_multi);
+  auto end = TIME_NOW;
+  cout << "Multithread-1 execution time: " << 
+    (double)TIME_DIFF(std::chrono::microseconds, begin, end) / 1000.0 << " ms\n";
 
-    for(int i = 0; i < ((N>>1)*(N>>1)); i++){
-        if(output_single[i] != output_reference[i]) {
-            cout << "Mismatch at " << i << "\n";
-            exit(0);
-        }
-    }
-  }
+  /*
+  for(int i = 0; i < ((N>>1)*(N>>1)); ++i)
+    if(output_multi[i] != output_reference[i]) {
+      cout << "Mismatch at " << i << "\n";
+      exit(0);
+    }*/
 
   input_file.close(); 
   return 0; 
