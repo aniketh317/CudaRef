@@ -1,37 +1,47 @@
-# Sample CUDA Program
+# Reducing Matrix Multiplication optimisation
 Optimize reducing matrix multiplication using hardware counters.
 Contained are two folders:
 * PartA: Contains setup for single-threaded and multi-threaded program.
 * PartB: Contains setup for GPU program.
 
-Each folder contains two sub-folders, a Makefile, and a main program.
-* Makefile: Contains commands necessary to compile, generate inputs, and run the program.
-* data folder: Contains program that generates input, and will contain input once generated.
-* header folder: Files containing the function that performs the operation. Modify the files in this folder.
-* main.cpp: Program that takes inputs and executes the functions. DO NOT MODIFY THIS.
+*There is a MakeFile at the root of the project.
 
-Navigate to each folder to begin setting up the system.
-Inside each folder do the following:
-### Compiling and generating input
-Use the following command to compile the programs and generate required input:
+#DATA
+*Targets for generating data files(.ini files) for various dimensions are all present in the same Makefile
+The data generated go into the datacommon(data common for Part-A, Part-B) folder.
+For generating object file for datagenerate.cpp use
 ```
-make
+make data/generate
 ```
+Then for generating a random n x n(n \in 16,1024,2048,4096,8192,16384) Data, which goes into datacommon folder do
+```
+make datacommon/input_{n}.in
+```
+
 ## PARTA
-### Running program
-You can use make to run the executable with the following command:
+*Part-A folder has header files for Single and Multi Thread implementations
+*rmmcpu, rmmcpu2, rmmcpu3 are object file targets for main.cpp, main2, main3.cpp in Part-A folder. 
 ```
-make run
+make rmmcpu
+make rmmcpu2
+make rmmcpu3
 ```
-Alternatively, you can manually run the program for the different input sets using the following commands:
+*If compilation, data generation(if not present already) and running on sample inputs is required do
 ```
-./rmm data/input_4096.in
-./rmm data/input_8192.in
-./rmm data/input_16384.in
+make runcpu
+make runcpu2
+make runcpu3
 ```
-
 ## PARTB
-use nvcc for compilation
+*Part-B folder has header files for Gpu Thread implementations
+*rmmgpu, rmmgpu2 are object file targets for main.cu and main2.cu in Part-B. nvcc used for compilation of .cu files
+
 ```
-use makefile for respective tasks
-# CudaRef
+make rmmgpu
+make rmmgpu2
+```
+*If compilation, data generation(if not present already) and running on sample inputs is required do
+```
+make rungpu
+make rungpu2
+```
