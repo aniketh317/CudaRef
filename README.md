@@ -6,7 +6,7 @@ Contained are two folders:
 
 There is a MakeFile at the root of the project.
 
-# DATA
+## DATA
 *Targets for generating data files(.ini files) for various dimensions are all present in the same Makefile
 The data generated go into the datacommon(data common for Part-A, Part-B) folder.
 For generating object file for datagenerate.cpp use
@@ -40,7 +40,7 @@ rmmgpu, rmmgpu2 are object file targets for main.cu and main2.cu in Part-B. nvcc
 make rmmgpu
 make rmmgpu2
 ```
-* If compilation, data generation(if not present already) and running on sample inputs is required do
+If compilation, data generation(if not present already) and running on sample inputs is required do
 ```
 make rungpu
 make rungpu2
