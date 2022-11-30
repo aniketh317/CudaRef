@@ -63,7 +63,7 @@ rungpu: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in
 	./rmmgpu data/input_8192.in
 	./rmmgpu data/input_16384.in
 
-runcpu2: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmgpu2
+rungpu2: datacommon/input_16.in datacommon/input_4096.in datacommon/input_8192.in datacommon/input_16384.in rmmgpu2
 	./rmmgpu2 datacommon/input_16.in
 	./rmmgpu2 datacommon/input_4096.in
 	./rmmgpu2 datacommon/input_8192.in
