@@ -18,7 +18,7 @@ Then for generating a random n x n(n \in 16,1024,2048,4096,8192,16384) Data, whi
 make datacommon/input_{n}.in
 ```
 
-## PARTA
+## PART-A
 Part-A folder has header files for Single and Multi Thread implementations
 rmmcpu, rmmcpu2, rmmcpu3 are object file targets for main.cpp, main2, main3.cpp in Part-A folder. 
 ```
@@ -32,7 +32,7 @@ make runcpu
 make runcpu2
 make runcpu3
 ```
-## PARTB
+## PART-B
 Part-B folder has header files for Gpu Thread implementations
 rmmgpu, rmmgpu2 are object file targets for main.cu and main2.cu in Part-B. nvcc used for compilation of .cu files
 
